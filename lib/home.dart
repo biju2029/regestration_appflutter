@@ -23,6 +23,7 @@ class Register extends StatelessWidget {
             ),
           ),
           SizedBox(height: 150),
+
           SizedBox(
             height: 40,
             width: 300,
