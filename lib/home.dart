@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:regestration_appflutter/login.dart';
+import 'package:regestration_appflutter/signup.dart';
 
 // ignore: camel_case_types
-class Register extends StatelessWidget {
-  const Register({super.key});
+class Welcome extends StatelessWidget {
   @override
   build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,12 @@ class Register extends StatelessWidget {
                 backgroundColor: const Color.fromARGB(255, 222, 226, 230),
                 foregroundColor: Colors.black,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Loginpage()),
+                );
+              },
               child: Text("login"),
             ),
           ),
@@ -45,7 +51,12 @@ class Register extends StatelessWidget {
                 backgroundColor: const Color.fromARGB(255, 3, 82, 160),
                 foregroundColor: Colors.black,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Signup()),
+                );
+              },
               child: Text("Sign up"),
             ),
           ),
