@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "415655545649",
+    "project_id": "register-afe35",
+    "storage_bucket": "register-afe35.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415655545649:android:aa71f80d6d6c0767543e10",
+        "android_client_info": {
+          "package_name": "com.example.regestration_appflutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAY7b6Gh-Om2gbEELcxUwpE7qjn3x8roI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
