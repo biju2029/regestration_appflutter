@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:regestration_appflutter/services.dart';
 
 class Forgot extends StatefulWidget {
   const Forgot({super.key});
@@ -8,6 +9,7 @@ class Forgot extends StatefulWidget {
 }
 
 class _ForgotState extends State<Forgot> {
+  TextEditingController emailcont = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +24,7 @@ class _ForgotState extends State<Forgot> {
             child: Text("Email", style: TextStyle(fontSize: 25)),
           ),
           TextField(
+            controller: emailcont,
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
               border: OutlineInputBorder(
@@ -39,7 +42,9 @@ class _ForgotState extends State<Forgot> {
                 foregroundColor: const Color.fromARGB(255, 57, 96, 159),
                 side: BorderSide(color: const Color.fromARGB(255, 29, 26, 26)),
               ),
-              onPressed: () {},
+              onPressed: () {
+                forgot(email: emailcont.text, context: context);
+              },
               child: Text("Send Link"),
             ),
           ),

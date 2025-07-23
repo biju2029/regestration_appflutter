@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:regestration_appflutter/login.dart';
+import 'package:regestration_appflutter/services.dart';
 
-class Signup extends StatelessWidget {
+class Signup extends StatefulWidget {
   const Signup({super.key});
 
+  @override
+  State<Signup> createState() => _SignupState();
+}
+
+class _SignupState extends State<Signup> {
+  TextEditingController namecont = TextEditingController();
+  TextEditingController emailcont = TextEditingController();
+  TextEditingController passwordcont = TextEditingController();
+  TextEditingController confirmpasswordcont = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +32,7 @@ class Signup extends StatelessWidget {
           SizedBox(height: 8),
           Align(alignment: Alignment.topLeft, child: Text("Username")),
           TextField(
+            controller: namecont,
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
               fillColor: Colors.white,
@@ -33,6 +44,7 @@ class Signup extends StatelessWidget {
           ),
           Align(alignment: Alignment.topLeft, child: Text("Email")),
           TextField(
+            controller: emailcont,
             keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
               fillColor: Colors.white,
@@ -44,7 +56,8 @@ class Signup extends StatelessWidget {
           ),
           Align(alignment: Alignment.topLeft, child: Text("Password")),
           TextField(
-            keyboardType: TextInputType.visiblePassword,
+            controller: passwordcont,
+
             decoration: InputDecoration(
               fillColor: Colors.white,
               filled: true,
@@ -55,7 +68,7 @@ class Signup extends StatelessWidget {
           ),
           Align(alignment: Alignment.topLeft, child: Text("Confirm password")),
           TextField(
-            keyboardType: TextInputType.visiblePassword,
+            controller: confirmpasswordcont,
             decoration: InputDecoration(
               fillColor: Colors.white,
               filled: true,
@@ -74,10 +87,19 @@ class Signup extends StatelessWidget {
                 foregroundColor: Colors.white,
                 side: BorderSide(color: Colors.black),
               ),
-              onPressed: () {},
+              onPressed: () {
+                signup(
+                  Username: namecont.text,
+                  Email: emailcont.text,
+                  Password: passwordcont.text,
+                  Confirmpassword: confirmpasswordcont.text,
+                  context: context,
+                );
+              },
               child: Text("sign up"),
             ),
           ),
+
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

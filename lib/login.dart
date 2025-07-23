@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:regestration_appflutter/forgot.dart';
+import 'package:regestration_appflutter/services.dart';
 import 'package:regestration_appflutter/signup.dart';
 
-class Loginpage extends StatelessWidget {
+class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
 
+  @override
+  State<Loginpage> createState() => _LoginpageState();
+}
+
+class _LoginpageState extends State<Loginpage> {
+  TextEditingController emailcont = TextEditingController();
+  TextEditingController passwordcont = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +40,7 @@ class Loginpage extends StatelessWidget {
               SizedBox(height: 40),
               Align(alignment: Alignment.topLeft, child: Text("Email")),
               TextField(
+                controller: emailcont,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   fillColor: Colors.white,
@@ -44,6 +53,7 @@ class Loginpage extends StatelessWidget {
               SizedBox(height: 20),
               Align(alignment: Alignment.topLeft, child: Text("Password")),
               TextField(
+                controller: passwordcont,
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                   fillColor: Colors.white,
@@ -82,9 +92,10 @@ class Loginpage extends StatelessWidget {
                     side: BorderSide(color: Colors.black),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Signup()),
+                    loginpage(
+                      Email: emailcont.text,
+                      Password: passwordcont.text,
+                      context: context,
                     );
                   },
                   child: Text("Login"),
